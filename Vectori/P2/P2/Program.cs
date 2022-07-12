@@ -35,7 +35,6 @@ namespace P2
                         Console.Write(i+" ");
                         v[i]--;
                     }
-                    
         }
     }
 }
