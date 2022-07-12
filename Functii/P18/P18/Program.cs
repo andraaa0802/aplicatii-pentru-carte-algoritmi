@@ -21,12 +21,12 @@ namespace P18
             StreamReader sr = new StreamReader(@"..\..\BAC.IN");
             StreamWriter sw = new StreamWriter(@"..\..\BAC.OUT");
             string[] buffer = sr.ReadLine().Split(' ');
-            for(int i=0;i<buffer.Length;i++)
+            for(int i=0;i<buffer.Length;i++) //se parcurge prima linie citita din fisier
             {
-                nr = int.Parse(buffer[i]);
-                for (int j = 1; j <= 9; j += 2)
-                    P(ref nr, j);
-                if (nr != 0)
+                nr = int.Parse(buffer[i]); //in nr se retine numarul de pe pozitia i din fisier
+                for (int j = 1; j <= 9; j += 2) //cu acest for se parcurg cifrele impare
+                    P(ref nr, j); //apeleaza subprogramul pentru nr si fiecare cifra impara
+                if (nr != 0) //daca nr este diferit de 0, il afiseaza
                     sw.Write(nr + " ");
             }
             sr.Close();
@@ -37,7 +37,7 @@ namespace P18
             int a=0, p=1;//in a se va retine numarul nou, iar p se va folosi pentru a pastra ordinea cifrelor
             while (n!=0)
             {
-                if (n % 10 != c)
+                if (n % 10 != c) //daca ultima cifra a lui n este diferita de c o adauga la a
                 {
                     a += n % 10 * p;
                     p *= 10;
