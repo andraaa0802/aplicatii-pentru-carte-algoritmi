@@ -40,9 +40,12 @@ namespace P13
                         v[i] = v[j];
                         v[j] = aux;
                     }
-            //afisam numerele prime
-            for(int i=0;i<contor;i++)
-                Console.Write(v[i]+" ");
+            //afisam numerele prime daca exista
+            if (contor!=0)
+                for(int i=0;i<contor;i++)
+                    Console.Write(v[i]+" ");
+            else
+                Console.WriteLine("NU EXISTA");
         }
 
         private static int f(int n)
